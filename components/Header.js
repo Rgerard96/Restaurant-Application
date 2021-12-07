@@ -20,7 +20,7 @@ export default function Header() {
       />
       <div className='py-3 px-5 border-b flex justify-between items-center'>
         <div>
-          <h2 className='font-bold text-blue-500 text-lg sm:text-2xl'>
+          <h2 className='font-bold text-blue-500 text-xl sm:text-2xl'>
             CultureHypes
           </h2>
         </div>

@@ -69,7 +69,7 @@ export default function login() {
               htmlFor='remember-me'
               className='ml-2 block text-sm text-gray-900'
             >
-              Ik wil ingelogd blijven
+              Ik wil 30 dagen ingelogd blijven
             </label>
           </div>
 
