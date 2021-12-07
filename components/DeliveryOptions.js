@@ -23,6 +23,6 @@ export default function DeliveryOptions() {
 }
 
 const style = {
-  active: 'text-center py-3 flex-1 bg-blue-500 text-white',
+  active: 'text-center py-3 flex-1 bg-blue-500 text-white underline',
   notActve: 'text-center py-3 flex-1 bg-white',
 };

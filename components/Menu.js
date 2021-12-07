@@ -9,8 +9,8 @@ import Link from 'next/link';
 export default function Menu() {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
-    <div className='mt-6 relative flex flex-col justify-between flex-1 px-5 text-center'>
-      <div className='divide-y'>
+    <>
+      <div className='divide-y border-t'>
         <div className='p-5 flex items-center cursor-pointer group'>
           <ShoppingBagIcon className='w-6 text-blue-500 mr-5' />
           <p className='group-hover:text-blue-500'>Bestellingen</p>
@@ -46,6 +46,6 @@ export default function Menu() {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }

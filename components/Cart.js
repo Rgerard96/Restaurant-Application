@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function Cart() {
   const [cart, setCart] = useState(0);
   return (
-    <div className='mt-7 relative flex flex-col flex-1 px-5 text-center'>
+    <div>
       <div className='text-center p-3 mb-4 text-xl font-bold border-b border-t sm:border-t-0'>
         Winkelmandje
       </div>
