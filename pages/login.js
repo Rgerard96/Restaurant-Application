@@ -80,7 +80,7 @@ export default function login() {
             >
               <span className='absolute left-0 inset-y-0 flex items-center pl-3'>
                 <LockClosedIcon
-                  className='h-5 w-5 text-blue-400 group-hover:text-blue-300'
+                  className='w-6 text-blue-400 group-hover:text-blue-300'
                   aria-hidden='true'
                 />
               </span>

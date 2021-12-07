@@ -62,7 +62,7 @@ export default function Menu({ menuOpen, setMenuOpen }) {
                       onClick={() => setMenuOpen(!menuOpen)}
                     >
                       <span className='sr-only'>Close panel</span>
-                      <XIcon className='h-5 w-5' aria-hidden='true' />
+                      <XIcon className='w-6' aria-hidden='true' />
                     </button>
                   </div>
                 </Transition.Child>
@@ -70,17 +70,17 @@ export default function Menu({ menuOpen, setMenuOpen }) {
                   <div className='mt-6 relative flex flex-col justify-between flex-1 px-5 text-center'>
                     <div className='divide-y'>
                       <div className='p-5 flex items-center cursor-pointer group'>
-                        <ShoppingBagIcon className='w-5 text-blue-500 mr-5' />
+                        <ShoppingBagIcon className='w-6 text-blue-500 mr-5' />
                         <p className='group-hover:text-blue-500'>
                           Bestellingen
                         </p>
                       </div>
                       <div className='p-5 flex items-center cursor-pointer group'>
-                        <HeartIcon className='w-5 text-blue-500 mr-5' />
+                        <HeartIcon className='w-6 text-blue-500 mr-5' />
                         <p className='group-hover:text-blue-500'>Favorieten</p>
                       </div>
                       <div className='p-5 flex items-center cursor-pointer group'>
-                        <InformationCircleIcon className='w-5 text-blue-500 mr-5' />
+                        <InformationCircleIcon className='w-6 text-blue-500 mr-5' />
                         <p className='group-hover:text-blue-500'>Hulp nodig?</p>
                       </div>
                     </div>

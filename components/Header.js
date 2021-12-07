@@ -42,7 +42,7 @@ export default function Header() {
             </div>
           )}
           <div className='cursor-pointer' onClick={menuHandler}>
-            <MenuIcon className='w-5 ml-5 hover:text-blue-600' />
+            <MenuIcon className='w-6 ml-5 hover:text-blue-600' />
           </div>
         </div>
       </div>
