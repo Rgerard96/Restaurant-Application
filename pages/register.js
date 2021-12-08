@@ -27,7 +27,7 @@ export default function register() {
         </div>
         <form className='mt-8 space-y-6' action='#' method='POST'>
           <input type='hidden' name='remember' defaultValue='true' />
-          <div className='rounded-md shadow-sm -space-y-px'>
+          <div className='rounded-lg shadow-sm -space-y-px'>
             <div>
               <label htmlFor='name' className='sr-only'>
                 Naam
@@ -38,7 +38,7 @@ export default function register() {
                 type='name'
                 autoComplete='name'
                 required
-                className='appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:'
+                className='appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:'
                 placeholder='Naam'
               />
             </div>
@@ -80,7 +80,7 @@ export default function register() {
                 type='password'
                 autoComplete='current-password'
                 required
-                className='appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:'
+                className='appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:'
                 placeholder='Wachtwoord bevestigen'
               />
             </div>
@@ -92,7 +92,7 @@ export default function register() {
                 id='remember-me'
                 name='remember-me'
                 type='checkbox'
-                className='h-4 w-4 text-blue-500 focus:ring-blue-600 border-gray-300 rounded'
+                className='h-4 w-4 text-blue-500 focus:ring-blue-600 border-gray-300 rounded-lg'
               />
               <label
                 htmlFor='remember-me'
@@ -106,7 +106,7 @@ export default function register() {
           <div>
             <button
               type='submit'
-              className='group relative w-full flex justify-center py-2 px-4 border border-transparent  font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400'
+              className='group relative w-full flex justify-center py-2 px-4 border border-transparent  font-medium rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400'
             >
               <span className='absolute left-0 inset-y-0 flex items-center pl-3'>
                 <LockClosedIcon

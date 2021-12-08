@@ -15,10 +15,13 @@ module.exports = {
         primary: ['Quicksand', 'ui-sans-serif'],
         secundary: ['Poppins', 'ui-sans-serif'],
       },
+      spacing: {
+        84: '22rem',
+      },
     },
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};

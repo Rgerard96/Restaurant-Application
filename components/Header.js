@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { MenuIcon, ShoppingCartIcon } from '@heroicons/react/outline';
+import { MenuIcon } from '@heroicons/react/outline';
 import SlideOver from './SlideOver';
 
 export default function Header() {
@@ -47,9 +47,6 @@ export default function Header() {
               </Link>
             </div>
           )}
-          <div className='sm:hidden' onClick={slideOverHandler} id='cart'>
-            <ShoppingCartIcon className='w-6 pointer-events-none' />
-          </div>
           <div className='cursor-pointer' onClick={slideOverHandler} id='menu'>
             <MenuIcon className='w-6 ml-5 md:hover:text-blue-600 pointer-events-none' />
           </div>
