@@ -1,3 +1,7 @@
+html{
+  -webkit-overflow-scrolling: touch;
+}
+
 .navbarCSS, .scrollSmooth {
   overflow-x: auto;
   scroll-behavior: smooth;
