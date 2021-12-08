@@ -24,7 +24,7 @@ export default function ScrollUpBtn() {
       }`}
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
     >
-      <ChevronUpIcon className='w-7 h-7' />
+      <ChevronUpIcon className='w-10 h-10' />
     </div>
   );
 }
