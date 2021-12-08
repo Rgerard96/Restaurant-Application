@@ -1,27 +1,45 @@
 import React, { useState } from 'react';
 
 export default function NavBar() {
-  const [deliveryOption, setDeliveryOption] = useState('afhalen');
+  const [menuOption, setMenuOption] = useState('Populaire gerechten');
   return (
-    <div className='flex items-center navbarCSS text-xs sm:text-sm pb-1'>
+    <div className='flex items-center navbarCSS text-sm sm:text-base pb-1'>
       <div
-        className={deliveryOption === 'afhalen' ? style.active : style.notActve}
+        className={
+          menuOption === 'Populaire gerechten' ? style.active : style.notActve
+        }
+        onClick={() => setMenuOption('Populaire gerechten')}
       >
         Populaire gerechten
       </div>
-      <div className={deliveryOption === 'b' ? style.active : style.notActve}>
+      <div
+        className={menuOption === 'Patat' ? style.active : style.notActve}
+        onClick={() => setMenuOption('Patat')}
+      >
         Patat
       </div>
-      <div className={deliveryOption === 'b' ? style.active : style.notActve}>
+      <div
+        className={menuOption === 'Snacks' ? style.active : style.notActve}
+        onClick={() => setMenuOption('Snacks')}
+      >
         Snacks
       </div>
-      <div className={deliveryOption === 'b' ? style.active : style.notActve}>
+      <div
+        className={menuOption === 'Kapsalon' ? style.active : style.notActve}
+        onClick={() => setMenuOption('Kapsalon')}
+      >
         Kapsalon
       </div>
-      <div className={deliveryOption === 'b' ? style.active : style.notActve}>
+      <div
+        className={menuOption === 'Dranken' ? style.active : style.notActve}
+        onClick={() => setMenuOption('Dranken')}
+      >
         Dranken
       </div>
-      <div className={deliveryOption === 'b' ? style.active : style.notActve}>
+      <div
+        className={menuOption === 'Sauzen' ? style.active : style.notActve}
+        onClick={() => setMenuOption('Sauzen')}
+      >
         Sauzen
       </div>
     </div>

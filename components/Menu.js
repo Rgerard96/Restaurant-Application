@@ -10,16 +10,16 @@ export default function Menu() {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
     <>
-      <div className='divide-y border-t'>
-        <div className='p-5 flex items-center cursor-pointer group'>
+      <div className='-mx-5 border-t'>
+        <div className='p-5 flex border-b items-center cursor-pointer group'>
           <ShoppingBagIcon className='w-6 text-blue-500 mr-5' />
           <p className='group-hover:text-blue-500'>Bestellingen</p>
         </div>
-        <div className='p-5 flex items-center cursor-pointer group'>
+        <div className='p-5 flex border-b items-center cursor-pointer group'>
           <HeartIcon className='w-6 text-blue-500 mr-5' />
           <p className='group-hover:text-blue-500'>Favorieten</p>
         </div>
-        <div className='p-5 flex items-center cursor-pointer group'>
+        <div className='p-5 flex border-b items-center cursor-pointer group'>
           <InformationCircleIcon className='w-6 text-blue-500 mr-5' />
           <p className='group-hover:text-blue-500'>Hulp nodig?</p>
         </div>
