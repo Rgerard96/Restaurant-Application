@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
+import ScrollUpBtn from '../components/ScrollUpBtn';
 import '/styles/index.css';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className='font-secundary text-darkGrey'>
+    <div className='font-secundary text-darkGrey relative'>
       <Head>
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Component {...pageProps} />
+      <ScrollUpBtn />
     </div>
   );
 }

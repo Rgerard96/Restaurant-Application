@@ -3,7 +3,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { ExclamationIcon, CheckIcon } from '@heroicons/react/solid';
 
 export default function Modal({ modal, setModal, type }) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     setOpen(modal);
   }, [modal]);
