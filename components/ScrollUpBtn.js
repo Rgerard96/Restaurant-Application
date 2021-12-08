@@ -19,7 +19,7 @@ export default function ScrollUpBtn() {
   console.log(scrollPosition);
   return (
     <div
-      className={`z-10 right-2 bottom-20 rounded-full transition-all bg-white drop-shadow p-1 scrollSmooth ${
+      className={`z-10 right-2 bottom-20 rounded-full transition-all bg-white drop-shadow p-1 ${
         scrollPosition >= 750 ? 'fixed' : 'hidden'
       }`}
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

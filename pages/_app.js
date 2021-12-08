@@ -5,7 +5,7 @@ import '/styles/index.css';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className='font-secundary text-darkGrey relative'>
+    <div className='font-secundary text-darkGrey relative scrollSmooth'>
       <Head>
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
