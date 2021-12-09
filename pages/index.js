@@ -36,7 +36,7 @@ export default function Home() {
       <Header />
       <div className='grid grid-cols-7 2xl:grid-cols-5 bg-lighterGrey min-h-screen'>
         <div className='col-span-7 sm:col-span-5 2xl:col-span-4 px-5'>
-          <div className='mb-5 px-5 py-3 z-30 bg-white -mx-5 sticky top-0 border-b'>
+          <div className='mb-5 px-5 py-3 z-10 bg-white -mx-5 sticky top-0 border-b'>
             <div className='mb-3 border-b -mx-5 px-5 sm:pl-5 pb-3 flex items-center justify-between '>
               <div className='font-bold text-lg sm:text-xl'>Menu</div>
               <div

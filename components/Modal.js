@@ -14,7 +14,7 @@ export default function Modal({ modal, setModal, type }) {
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as='div'
-        className='fixed z-10 inset-0 overflow-y-auto'
+        className='fixed z-20 inset-0 overflow-y-auto'
         initialFocus={cancelButtonRef}
         onClose={setModal}
       >
