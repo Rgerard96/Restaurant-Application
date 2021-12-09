@@ -12,7 +12,7 @@ export default function DeliveryOptions() {
   };
 
   return (
-    <div className='sm:hidden flex border-t sticky bottom-0'>
+    <div className='sm:hidden flex border-t sticky bottom-0 border'>
       <Modal modal={modal} setModal={setModal} type={type} />
       <div
         className={deliveryOption === 'afhalen' ? style.active : style.notActve}
