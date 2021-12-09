@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function FoodCard() {
   return (
-    <div className='bg-white p-5 rounded-lg mb-5 relative overflow-hidden flex'>
+    <div className='bg-white p-5 rounded-lg mb-5 relative overflow-hidden flex shadow-md'>
       <div className='w-3/4'>
         <h3 className='font-bold mb-2'>Margherita pizza</h3>
         <p className='mb-3 text-sm'>Tomatensaus en kaas</p>
