@@ -30,15 +30,23 @@ export default function SlideOver({ slideOver, setSlideOver, type }) {
           >
             <Dialog.Overlay className='absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity' />
           </Transition.Child>
-          <div className='fixed inset-y-0 right-0 pl-10 max-w-full flex'>
+          <div
+            className={`fixed inset-y-0 right-0 max-w-full flex ${
+              type === 'cart' ? 'pt-10' : 'pl-10'
+            }`}
+          >
             <Transition.Child
               as={Fragment}
               enter='transform transition ease-in-out duration-500 sm:duration-700'
-              enterFrom='translate-x-full'
-              enterTo='translate-x-0'
+              enterFrom={
+                type === 'cart' ? 'translate-y-full' : 'translate-x-full'
+              }
+              enterTo={type === 'cart' ? 'translate-y-0' : 'translate-x-0'}
               leave='transform transition ease-in-out duration-500 sm:duration-700'
-              leaveFrom='translate-x-0'
-              leaveTo='translate-x-full'
+              leaveFrom={type === 'cart' ? 'translate-y-0' : 'translate-x-0'}
+              leaveTo={
+                type === 'cart' ? 'translate-y-full' : 'translate-x-full'
+              }
             >
               <div className='relative w-screen max-w-md'>
                 <Transition.Child

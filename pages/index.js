@@ -1,13 +1,13 @@
 import Head from 'next/head';
 import React, { useState } from 'react';
 import Cart from '../components/Cart';
-import DeliveryOptions from '../components/DeliveryOptions';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
 import SlideOver from '../components/SlideOver';
 import { ShoppingCartIcon, LightningBoltIcon } from '@heroicons/react/outline';
 import Modal from '../components/Modal';
 import SingleMenu from '../components/SingleMenu';
+import CartButton from '../components/CartButton';
 
 export default function Home() {
   const [slideOver, setSlideOver] = useState(false);
@@ -21,6 +21,7 @@ export default function Home() {
     setModal(!modal);
     setType(e.target.id);
   };
+  const cart = true;
   return (
     <div className='relative'>
       <Head>
@@ -64,7 +65,7 @@ export default function Home() {
           <Cart />
         </div>
       </div>
-      <DeliveryOptions />
+      {cart && <CartButton />}
     </div>
   );
 }
