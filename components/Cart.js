@@ -4,8 +4,8 @@ import { useState } from 'react';
 export default function Cart() {
   const [cart, setCart] = useState(0);
   return (
-    <div className='sm:border-l'>
-      <div className='-mx-5 sm:mx-0 text-center p-3 mb-4 text-xl font-bold border-b border-t sm:border-t-0'>
+    <div className='xl:border-l'>
+      <div className='-mx-5 xl:mx-0 text-center p-3 mb-4 text-xl font-bold border-b border-t sm:border-t-0'>
         Winkelmandje
       </div>
       {cart ? (

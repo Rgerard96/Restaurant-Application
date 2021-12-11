@@ -4,6 +4,7 @@ import {
   HeartIcon,
   InformationCircleIcon,
   LightningBoltIcon,
+  TruckIcon,
 } from '@heroicons/react/solid';
 import Link from 'next/link';
 
@@ -23,6 +24,10 @@ export default function Menu() {
         <div className='p-5 flex border-b items-center cursor-pointer group'>
           <InformationCircleIcon className='w-6 text-blue-500 mr-5' />
           <p className='group-hover:text-blue-500'>Hulp nodig?</p>
+        </div>
+        <div className='p-5 flex border-b items-center cursor-pointer group'>
+          <TruckIcon className='w-6 text-blue-500 mr-5' />
+          <p className='group-hover:text-blue-500'>Mijn bestelling volgen</p>
         </div>
         <div className='p-5 flex border-b items-center cursor-pointer text-red-500 font-bold'>
           <LightningBoltIcon className='w-6 mr-5' />
