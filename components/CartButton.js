@@ -19,7 +19,7 @@ export default function CartButton() {
         setSlideOver={setSlideOver}
         type={type}
       />
-      Winkelmandje <span>(2)</span>
+      Winkelmandje <span className='pointer-events-none'>(2)</span>
     </div>
   );
 }
