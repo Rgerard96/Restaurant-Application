@@ -8,7 +8,7 @@ export default function FoodCard() {
         className='sm:mr-10 -m-3 sm:-m-5 sm:w-36 sm:min-h-36 2xl:w-48 2xl:min-h-48 bg-cover bg-center bg-no-repeat flex-none order-2 sm:order-none h-24 w-24 rounded-bl-lg'
         style={{ backgroundImage: 'url(' + '/images/img2.jpg' + ')' }}
       ></div>
-      <div className='flex flex-col flex-initial w-3/4 sm:w-1/2 md:w-3/5 order-1 sm:order-none'>
+      <div className='flex flex-col flex-initial w-3/5 sm:w-1/2 md:w-3/5 order-1 sm:order-none'>
         <h3 className='font-bold md:text-lg 2xl:text-xl'>Margherita pizza</h3>
         <p className='mb-3 text-sm 2xl:text-base'>Tomatensaus en kaas</p>
         <p className='text-xs 2xl:text-sm italic text-gray-500 mb-3 sm:mb-0'>
