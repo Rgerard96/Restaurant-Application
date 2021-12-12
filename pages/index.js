@@ -8,8 +8,10 @@ import { ShoppingCartIcon, LightningBoltIcon } from '@heroicons/react/outline';
 import Modal from '../components/Modal';
 import SingleMenu from '../components/SingleMenu';
 import CartButton from '../components/CartButton';
+import FoodCard from '../components/FoodCard';
 
 export default function Home() {
+  const [cart, setCart] = useState(0);
   const [slideOver, setSlideOver] = useState(false);
   const [type, setType] = useState();
   const [modal, setModal] = useState(false);
@@ -21,7 +23,9 @@ export default function Home() {
     setModal(!modal);
     setType(e.target.id);
   };
-  const cart = true;
+  const cartHandler = () => {
+    setCart(cart++);
+  };
   return (
     <div className='relative'>
       <Head>
@@ -56,16 +60,21 @@ export default function Home() {
             <NavBar />
           </div>
           <div className='z-0'>
-            <SingleMenu />
-            <SingleMenu />
-            <SingleMenu />
+            <div className='mb-3 rounded-lg bg-blue-200 text-blue-500 p-3 font-bold'>
+              Populaire gerechten
+            </div>
+            <FoodCard cartHandler={cartHandler} />
+            <FoodCard cartHandler={cartHandler} />
+            <FoodCard cartHandler={cartHandler} />
+            <FoodCard cartHandler={cartHandler} />
+            <FoodCard cartHandler={cartHandler} />            
           </div>
         </div>
         <div className='bg-white col-span-2 2xl:col-span-1  sticky top-0 hidden xl:block'>
           <Cart />
         </div>
       </div>
-      {cart && <CartButton />}
+      {cart && <CartButton cart={cart} />}
     </div>
   );
 }

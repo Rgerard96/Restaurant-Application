@@ -1,7 +1,7 @@
 import { PlusSmIcon } from '@heroicons/react/outline';
 import React from 'react';
 
-export default function FoodCard() {
+export default function FoodCard({ cartHandler }) {
   return (
     <div className='bg-white p-3 rounded-lg mb-5 relative overflow-hidden flex flex-row shadow-md justify-between sm:justify-start min-h-36'>
       <div
@@ -19,8 +19,11 @@ export default function FoodCard() {
       <div className='absolute left-0 bottom-0 sm:left-auto sm:bottom-auto sm:top-0 sm:right-0 p-3 '>
         <p className='text-blue-500 font-bold sm:text-lg 2xl:text-xl'>€ 7,50</p>
       </div>
-      <div className='absolute bottom-0 right-0 p-2 bg-yellow-500 sm:hover:bg-yellow-600 rounded-tl-lg cursor-pointer'>
-          <PlusSmIcon className='text-white w-6'/>
+      <div
+        className='absolute bottom-0 right-0 w-20 flex items-center justify-center py-2 bg-yellow-500 sm:hover:bg-yellow-600 rounded-tl-lg cursor-pointer'
+        onClick={() => cartHandler()}
+      >
+        <PlusSmIcon className='text-white w-6' />
       </div>
     </div>
   );
