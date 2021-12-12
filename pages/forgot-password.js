@@ -37,7 +37,7 @@ export default function forgotPassword() {
                 E-mailadres
               </label>
               <input
-                id='email-address'
+                id='email'
                 name='email'
                 type='email'
                 autoComplete='email'

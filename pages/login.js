@@ -33,7 +33,7 @@ export default function login() {
                 E-mailadres
               </label>
               <input
-                id='email-address'
+                id='email'
                 name='email'
                 type='email'
                 autoComplete='email'

@@ -6,7 +6,6 @@ import NavBar from '../components/NavBar';
 import SlideOver from '../components/SlideOver';
 import { ShoppingCartIcon, LightningBoltIcon } from '@heroicons/react/outline';
 import Modal from '../components/Modal';
-import SingleMenu from '../components/SingleMenu';
 import CartButton from '../components/CartButton';
 import FoodCard from '../components/FoodCard';
 
