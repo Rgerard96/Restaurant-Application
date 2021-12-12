@@ -10,11 +10,11 @@ export default function FoodCard({ cartHandler }) {
       ></div>
       <div className='flex flex-col flex-initial w-3/5 sm:w-1/2 md:w-3/5 order-1 sm:order-none'>
         <h3 className='font-bold md:text-lg 2xl:text-xl'>Margherita pizza</h3>
-        <p className='mb-3 text-sm 2xl:text-base'>Tomatensaus en kaas</p>
-        <p className='text-xs 2xl:text-sm italic text-gray-500 mb-8 sm:mb-0'>
+        {/* <p className='mb-3 text-sm 2xl:text-base'>Tomatensaus en kaas</p> */}
+        {/* <p className='text-xs 2xl:text-sm italic text-gray-500 mb-8 sm:mb-0'>
           Keuze uit: Ham (kalkoen), Salami (rund), Kipfilet, Gehakt (rund),
           Shoarma (lams) en meer.
-        </p>
+        </p> */}
       </div>
       <div className='absolute left-0 bottom-0 sm:left-auto sm:bottom-auto sm:top-0 sm:right-0 p-3 '>
         <p className='text-blue-500 font-bold sm:text-lg 2xl:text-xl'>€ 7,50</p>
