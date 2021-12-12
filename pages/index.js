@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Cart from '../components/Cart';
 import Header from '../components/Header';
 import NavBar from '../components/NavBar';
@@ -23,9 +23,11 @@ export default function Home() {
     setModal(!modal);
     setType(e.target.id);
   };
+
   const cartHandler = () => {
-    setCart(cart++);
+    setCart(cart + 1);
   };
+  console.log(cart);
   return (
     <div className='relative'>
       <Head>
@@ -67,7 +69,7 @@ export default function Home() {
             <FoodCard cartHandler={cartHandler} />
             <FoodCard cartHandler={cartHandler} />
             <FoodCard cartHandler={cartHandler} />
-            <FoodCard cartHandler={cartHandler} />            
+            <FoodCard cartHandler={cartHandler} />
           </div>
         </div>
         <div className='bg-white col-span-2 2xl:col-span-1  sticky top-0 hidden xl:block'>

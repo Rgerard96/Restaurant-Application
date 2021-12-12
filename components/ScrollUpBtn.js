@@ -16,7 +16,6 @@ export default function ScrollUpBtn() {
     };
   }, []);
 
-  console.log(scrollPosition);
   return (
     <div
       className={`z-10 right-2 bottom-20 rounded-full transition-all bg-white drop-shadow p-1 ${
