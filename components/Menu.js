@@ -12,7 +12,7 @@ export default function Menu() {
   const [loggedIn, setLoggedIn] = useState(false);
   return (
     <>
-      <div className='-mx-5 border-t'>
+      <div className='-mx-5 border-t p-3'>
         <div className='p-5 flex border-b items-center cursor-pointer group'>
           <ShoppingBagIcon className='w-6 text-blue-500 mr-5' />
           <p className='group-hover:text-blue-500'>Bestellingen</p>
@@ -34,7 +34,7 @@ export default function Menu() {
           <p>Aanbiedingen</p>
         </div>
       </div>
-      <div>
+      <div className='p-3'>
         {loggedIn ? (
           <Link href='/mijn-account'>
             <a className='block sm:hidden mb-5 p-2 rounded-lg border border-blue-500 text-blue-500'>

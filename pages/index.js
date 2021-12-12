@@ -27,7 +27,7 @@ export default function Home() {
   const cartHandler = () => {
     setCart(cart + 1);
   };
-  console.log(cart);
+
   return (
     <div className='relative'>
       <Head>
@@ -70,13 +70,29 @@ export default function Home() {
             <FoodCard cartHandler={cartHandler} />
             <FoodCard cartHandler={cartHandler} />
             <FoodCard cartHandler={cartHandler} />
+            <div className='mb-3 rounded-lg bg-blue-200 text-blue-500 p-3 font-bold'>
+              Populaire gerechten
+            </div>
+            <FoodCard cartHandler={cartHandler} />
+            <FoodCard cartHandler={cartHandler} />
+            <FoodCard cartHandler={cartHandler} />
+            <FoodCard cartHandler={cartHandler} />
+            <FoodCard cartHandler={cartHandler} />
+            <div className='mb-3 rounded-lg bg-blue-200 text-blue-500 p-3 font-bold'>
+              Populaire gerechten
+            </div>
+            <FoodCard cartHandler={cartHandler} />
+            <FoodCard cartHandler={cartHandler} />
+            <FoodCard cartHandler={cartHandler} />
+            <FoodCard cartHandler={cartHandler} />
+            <FoodCard cartHandler={cartHandler} />
           </div>
         </div>
         <div className='bg-white col-span-2 2xl:col-span-1  sticky top-0 hidden xl:block'>
           <Cart />
         </div>
       </div>
-      {cart && <CartButton cart={cart} />}
+      {cart ? <CartButton cart={cart} /> : ''}
     </div>
   );
 }

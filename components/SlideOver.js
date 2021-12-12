@@ -69,8 +69,8 @@ export default function SlideOver({ slideOver, setSlideOver, type }) {
                     </button>
                   </div>
                 </Transition.Child>
-                <div className='h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll'>
-                  <div className='mt-7 relative flex flex-col justify-between flex-1 px-5 text-center'>
+                <div className='h-full flex flex-col pt-6 bg-white shadow-xl overflow-y-scroll'>
+                  <div className='mt-7 relative flex flex-col justify-between flex-1 text-center'>
                     {type === 'menu' && <Menu />}
                     {type === 'cart' && <Cart />}
                   </div>
