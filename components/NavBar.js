@@ -10,7 +10,7 @@ export default function NavBar() {
     window.scrollTo({ top: topPos, behavior: 'smooth' });
   };
   return (
-    <div className='flex items-center navbarCSS text-sm sm:text-base pb-1'>
+    <div className='flex items-center navbarCSS text-sm'>
       <div
         className={
           menuOption === 'Populaire gerechten' ? style.active : style.notActve

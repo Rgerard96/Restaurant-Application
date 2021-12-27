@@ -7,7 +7,7 @@ export default function Cart() {
   const [cart, setCart] = useState(1);
   return (
     <div className='xl:border-l flex flex-col h-full'>
-      <div className='-mx-5 xl:mx-0 text-center p-3 text-xl font-bold border-b border-t sm:border-t-0 flex-none sticky top-0 bg-white'>
+      <div className='-mx-5 xl:mx-0 text-center p-3 text-lg font-bold border-b border-t sm:border-t-0 flex-none sticky top-0 bg-white'>
         Winkelmandje
       </div>
       {cart ? (
