@@ -10,7 +10,7 @@ export default function CartItem() {
         </div>
         <div className='flex flex-col justify-between items-start text-left mr-5'>
           <div>
-            <h3 className='font-bold'>Margherita pizza</h3>
+            <h3 className='font-semibold'>Margherita pizza</h3>
             <p className='mb-3'>Tomatensaus en kaas</p>
           </div>
           <div>

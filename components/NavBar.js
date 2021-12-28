@@ -10,7 +10,7 @@ export default function NavBar() {
     window.scrollTo({ top: topPos, behavior: 'smooth' });
   };
   return (
-    <div className='flex items-center navbarCSS text-sm'>
+    <div className='flex items-center navbarCSS text-sm p-3 pt-3.5'>
       <div
         className={
           menuOption === 'Populaire gerechten' ? style.active : style.notActve
@@ -55,6 +55,6 @@ export default function NavBar() {
 
 const style = {
   active:
-    'mr-5 sm:mr-8 bg-blue-500 text-white rounded-lg p-2 flex-shrink-0 cursor-pointer',
+    'mr-5 sm:mr-8 text-blue-500 border-b-2 border-blue-500 flex-shrink-0 cursor-pointer font-semibold',
   notActve: 'mr-5 sm:mr-8 flex-shrink-0 cursor-pointer sm:hover:text-blue-500',
 };

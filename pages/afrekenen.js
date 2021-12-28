@@ -29,7 +29,7 @@ export default function afrekenen() {
       />
       <div className='grid grid-cols-7 2xl:grid-cols-5 min-h-screen'>
         <div className='col-span-7 xl:col-span-5 2xl:col-span-4 px-3 sm:px-5'>
-          <div className='mb-5 p-3 z-10  bg-blue-500 sm:bg-white text-white sm:text-black -mx-5 sticky top-0 border-b text-center text-xl sm:font-bold'>
+          <div className='mb-5 p-3 z-10  bg-blue-500 sm:bg-white text-white sm:text-black -mx-5 sticky top-0 border-b text-center text-xl sm:font-semibold'>
             <ChevronLeftIcon
               className='w-5 absolute left-6 top-4 cursor-pointer'
               onClick={goBackHandler}
@@ -38,7 +38,9 @@ export default function afrekenen() {
           </div>
           <div className='max-w-3xl mx-auto rounded-lg p-3 sm:p-5 mb-5'>
             <div className='mb-10'>
-              <h3 className='mb-5 font-bold text-lg'>Persoonlijke gegevens</h3>
+              <h3 className='mb-5 font-semibold text-lg'>
+                Persoonlijke gegevens
+              </h3>
               <div className='grid md:grid-cols-2 gap-5'>
                 <div>
                   <label className='block mb-2'>Voor- en achternaam</label>
@@ -74,7 +76,7 @@ export default function afrekenen() {
               </div>
             </div>
             <div>
-              <h3 className='mb-5 font-bold text-lg'>Bezorgadres</h3>
+              <h3 className='mb-5 font-semibold text-lg'>Bezorgadres</h3>
               <div className='grid md:grid-cols-2 gap-5'>
                 <div>
                   <label className='block mb-2'>Postcode</label>

@@ -7,7 +7,7 @@ export default function Cart() {
   const [cart, setCart] = useState(1);
   return (
     <div className='xl:border-l flex flex-col h-full'>
-      <div className='-mx-5 xl:mx-0 text-center p-3 text-lg font-bold border-b border-t sm:border-t-0 flex-none sticky top-0 bg-white'>
+      <div className='-mx-5 xl:mx-0 text-center p-4 text-lg font-semibold border-b border-t sm:border-t-0 flex-none sticky top-0 bg-white'>
         Winkelmandje
       </div>
       {cart ? (
@@ -27,7 +27,7 @@ export default function Cart() {
                 <p>Bezorgkosten</p>
                 <p>Gratis</p>
               </div>
-              <div className='flex justify-between mb-1 items-center font-bold'>
+              <div className='flex justify-between mb-1 items-center font-semibold'>
                 <p>Totaal</p>
                 <p>&euro; 15,00</p>
               </div>
@@ -50,7 +50,7 @@ export default function Cart() {
       ) : (
         <div className='flex flex-col items-center justify-center mt-32 p-4 text-center'>
           <ShoppingCartIcon className='w-8 mb-2' />
-          <h3 className='mb-2 text-lg font-bold'>Uw mandje is leeg</h3>
+          <h3 className='mb-2 text-lg font-semibold'>Uw mandje is leeg</h3>
           <p className='mb-2 text-gray-400 text-sm'>
             Voeg wat lekker eten toe van het menu en bestel je eten.
           </p>

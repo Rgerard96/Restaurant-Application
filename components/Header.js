@@ -20,9 +20,7 @@ export default function Header() {
       />
       <div className='py-3 px-5 border-b flex justify-between items-center text-sm'>
         <div>
-          <h2 className='font-bold text-blue-500 text-xl'>
-            CultureHypes
-          </h2>
+          <h2 className='font-semibold text-blue-500 text-xl'>CultureHypes</h2>
         </div>
         <div className='flex items-center sm:divide-x'>
           {loggedIn ? (
@@ -48,7 +46,7 @@ export default function Header() {
             </div>
           )}
           <div className='cursor-pointer' onClick={slideOverHandler} id='menu'>
-            <MenuIcon className='w-5 ml-5 md:hover:text-blue-600 pointer-events-none' />
+            <MenuIcon className='w-6 ml-5 md:hover:text-blue-600 pointer-events-none' />
           </div>
         </div>
       </div>

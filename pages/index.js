@@ -42,11 +42,14 @@ export default function Home() {
       <Header />
       <div className='grid grid-cols-7 2xl:grid-cols-5 bg-lighterGrey min-h-screen'>
         <div className='col-span-7 xl:col-span-5 2xl:col-span-4 px-5'>
-          <div className='mb-5 px-5 py-2 z-10 bg-white -mx-5 sticky top-0 border-b'>
+          <div className=' my-3'>
+            <div className='bg-white border-2 border-blue-500 rounded-lg h-32'></div>
+          </div>
+          <div className='mb-3 px-5 py-1.5 z-10 bg-white -mx-5 sticky top-0 border-b'>
             <NavBar />
           </div>
           <div className='z-0'>
-            <div className='mb-3 rounded-lg bg-blue-200 text-blue-500 p-3 font-bold text-sm'>
+            <div className='mb-3 rounded-lg bg-blue-200 text-blue-500 p-3 font-semibold text-sm'>
               Populaire gerechten
             </div>
             <FoodCard cartHandler={cartHandler} />
@@ -54,7 +57,7 @@ export default function Home() {
             <FoodCard cartHandler={cartHandler} />
             <FoodCard cartHandler={cartHandler} />
             <FoodCard cartHandler={cartHandler} />
-            <div className='mb-3 rounded-lg bg-blue-200 text-blue-500 p-3 font-bold text-sm'>
+            <div className='mb-3 rounded-lg bg-blue-200 text-blue-500 p-3 font-semibold text-sm'>
               Populaire gerechten
             </div>
             <FoodCard cartHandler={cartHandler} />
@@ -62,7 +65,7 @@ export default function Home() {
             <FoodCard cartHandler={cartHandler} />
             <FoodCard cartHandler={cartHandler} />
             <FoodCard cartHandler={cartHandler} />
-            <div className='mb-3 rounded-lg bg-blue-200 text-blue-500 p-3 font-bold text-sm'>
+            <div className='mb-3 rounded-lg bg-blue-200 text-blue-500 p-3 font-semibold text-sm'>
               Populaire gerechten
             </div>
             <FoodCard cartHandler={cartHandler} />

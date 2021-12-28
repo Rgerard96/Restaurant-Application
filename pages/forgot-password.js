@@ -7,7 +7,7 @@ export default function forgotPassword() {
     <div className='min-h-full flex items-center justify-center py-12 px-5 sm:px-6 lg:px-8'>
       <div className='max-w-md w-full space-y-8'>
         <div className='text-center'>
-          <h2 className='font-bold text-blue-500 text-lg sm:text-2xl'>
+          <h2 className='font-semibold text-blue-500 text-lg sm:text-2xl'>
             CultureHypes
           </h2>
           <h2 className='mt-6 text-2xl sm:text-3xl font-extrabold text-gray-900'>
