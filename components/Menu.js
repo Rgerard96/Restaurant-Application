@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   ShoppingBagIcon,
   HeartIcon,
@@ -7,9 +7,10 @@ import {
   TruckIcon,
 } from '@heroicons/react/solid';
 import Link from 'next/link';
+import { AuthContext } from '../context/auth';
 
 export default function Menu() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const { user, logout } = useContext(AuthContext);
   return (
     <>
       <div className='-mx-5 border-t p-3'>
@@ -35,12 +36,22 @@ export default function Menu() {
         </div>
       </div>
       <div className='p-3'>
-        {loggedIn ? (
-          <Link href='/mijn-account'>
-            <a className='block sm:hidden mb-5 p-2 rounded-lg border border-blue-500 text-blue-500'>
-              Mijn Account
+        {user ? (
+          <div className='sm:hidden flex flex-col'>
+            <a
+              className='block sm:hidden mb-5 p-2 rounded-lg border border-blue-500 text-blue-500'
+              onClick={() => {
+                logout();
+              }}
+            >
+              Uitloggen
             </a>
-          </Link>
+            <Link href='/mijn-account'>
+              <a className='p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg'>
+                Mijn Account
+              </a>
+            </Link>
+          </div>
         ) : (
           <div className='sm:hidden flex flex-col'>
             <Link href='/login'>

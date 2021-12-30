@@ -18,8 +18,7 @@ const typeDefs = gql`
 
   type User {
     id: ID!
-    firstName: String!
-    lastName: String!
+    name: String!
     email: String!
     isAdmin: Boolean!
     token: String!
@@ -83,8 +82,7 @@ const typeDefs = gql`
   }
 
   input RegisterUserInput {
-    firstName: String!
-    lastName: String!
+    name: String!
     email: String!
     password: String!
     confirmPassword: String!
@@ -124,8 +122,7 @@ const typeDefs = gql`
     register(registerUserInput: RegisterUserInput): User
     login(email: String!, password: String!): User
     updateUser(
-      firstName: String!
-      lastName: String!
+      name: String!
       email: String!
       oldPassword: String!
       newPassword: String
@@ -143,8 +140,7 @@ const typeDefs = gql`
     ): Product
     userProfileUpdate(
       id: ID!
-      firstName: String!
-      lastName: String!
+      name: String!
       email: String!
       isAdmin: Boolean!
     ): User

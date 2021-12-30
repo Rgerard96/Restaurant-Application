@@ -1,8 +1,52 @@
-import React from 'react';
-import Link from 'next/link';
 import { LockClosedIcon } from '@heroicons/react/solid';
+import { useMutation } from '@apollo/client';
+import { useContext, useEffect, useState } from 'react';
+import { LOGIN_USER } from '../utils/graphql';
+import { AuthContext } from '../context/auth';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function login() {
+  const router = useRouter();
+  const context = useContext(AuthContext);
+
+  useEffect(() => {
+    if (context.user) {
+      router.push('/');
+    }
+  }, []);
+
+  const [errors, setErrors] = useState({});
+  const [values, setValues] = useState({
+    email: '',
+    password: '',
+  });
+
+  const onChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const [loginUser] = useMutation(LOGIN_USER, {
+    update(_, { data: { login: userData } }) {
+      context.login(userData);
+      router.push('/');
+      setErrors({});
+      setValues({
+        email: '',
+        password: '',
+      });
+    },
+    variables: values,
+    onError(err) {
+      setErrors(err.graphQLErrors[0].extensions.errors);
+    },
+  });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    loginUser();
+  };
+
   return (
     <div className='min-h-full flex items-center justify-center py-12 px-5 sm:px-6 lg:px-8'>
       <div className='max-w-md w-full space-y-8'>
@@ -37,9 +81,12 @@ export default function login() {
                 name='email'
                 type='email'
                 autoComplete='email'
-                required
-                className='appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:'
-                placeholder='E-mailadres'
+                className={`${
+                  errors.email ? 'border-red-500' : 'border-gray-300'
+                } appearance-none rounded-none relative block w-full px-3 py-2 border  placeholder-gray-500 text-gray-900 rounded-t-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10`}
+                placeholder={`${errors.email ? errors.email : 'E-mailadres'}`}
+                onChange={onChange}
+                value={values.email}
               />
             </div>
             <div>
@@ -51,9 +98,14 @@ export default function login() {
                 name='password'
                 type='password'
                 autoComplete='current-password'
-                required
-                className='appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:'
-                placeholder='Wachtwoord'
+                className={`${
+                  errors.password ? 'border-red-500' : 'border-gray-300'
+                } appearance-none rounded-none relative block w-full px-3 py-2 border  placeholder-gray-500 text-gray-900 rounded-b-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10`}
+                placeholder={`${
+                  errors.password ? errors.password : 'Wachtwoord'
+                }`}
+                onChange={onChange}
+                value={values.password}
               />
             </div>
           </div>
@@ -77,6 +129,7 @@ export default function login() {
             <button
               type='submit'
               className='group relative w-full flex justify-center py-2 px-4 border border-transparent  font-medium rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mb-3'
+              onClick={onSubmit}
             >
               <span className='absolute left-0 inset-y-0 flex items-center pl-3'>
                 <LockClosedIcon

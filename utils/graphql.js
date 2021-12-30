@@ -19,8 +19,7 @@ const GET_USERS = gql`
   query UsersQuery($page: Int) {
     users(page: $page) {
       id
-      firstName
-      lastName
+      name
       email
       isAdmin
     }
@@ -32,8 +31,7 @@ const GET_ORDERS = gql`
     orders(page: $page) {
       id
       user {
-        firstName
-        lastName
+        name
       }
       totalPrice
       isPaid
@@ -61,8 +59,7 @@ const GET_PRODUCT = gql`
       reviews {
         id
         user {
-          firstName
-          lastName
+          name
         }
         rating
         comment
@@ -77,8 +74,7 @@ const GET_ORDER_AND_PAYPAL_ID = gql`
       id
       user {
         id
-        firstName
-        lastName
+        name
         email
       }
       orderItems {
@@ -130,8 +126,7 @@ const GET_USER_ORDERS = gql`
 const GET_USER = gql`
   query UserQuery($id: ID!) {
     getUser(id: $id) {
-      firstName
-      lastName
+      name
       email
       isAdmin
     }
@@ -140,24 +135,21 @@ const GET_USER = gql`
 
 const REGISTER_USER = gql`
   mutation register(
-    $firstName: String!
-    $lastName: String!
+    $name: String!
     $email: String!
     $password: String!
     $confirmPassword: String!
   ) {
     register(
       registerUserInput: {
-        firstName: $firstName
-        lastName: $lastName
+        name: $name
         email: $email
         password: $password
         confirmPassword: $confirmPassword
       }
     ) {
       id
-      firstName
-      lastName
+      name
       email
       isAdmin
       token
@@ -168,8 +160,7 @@ const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
       id
-      firstName
-      lastName
+      name
       email
       isAdmin
       token
@@ -179,24 +170,21 @@ const LOGIN_USER = gql`
 
 const UPDATE_USER = gql`
   mutation updateUser(
-    $firstName: String!
-    $lastName: String!
+    $name: String!
     $email: String!
     $oldPassword: String!
     $newPassword: String
     $confirmNewPassword: String
   ) {
     updateUser(
-      firstName: $firstName
-      lastName: $lastName
+      name: $name
       email: $email
       oldPassword: $oldPassword
       newPassword: $newPassword
       confirmNewPassword: $confirmNewPassword
     ) {
       id
-      firstName
-      lastName
+      name
       email
       isAdmin
       token
@@ -206,21 +194,18 @@ const UPDATE_USER = gql`
 const USER_PROFILE_UPDATE = gql`
   mutation userProfileUpdate(
     $id: ID!
-    $firstName: String!
-    $lastName: String!
+    $name: String!
     $email: String!
     $isAdmin: Boolean!
   ) {
     userProfileUpdate(
       id: $id
-      firstName: $firstName
-      lastName: $lastName
+      name: $name
       email: $email
       isAdmin: $isAdmin
     ) {
       id
-      firstName
-      lastName
+      name
       email
       isAdmin
     }
@@ -345,39 +330,39 @@ const GET_CART_ITEMS = gql`
   }
 `;
 
-const cartItemsVar = makeVar(
-  localStorage.getItem('cartItems')
-    ? JSON.parse(localStorage.getItem('cartItems'))
-    : []
-);
+// const cartItemsVar = makeVar(
+//   localStorage.getItem('cartItems')
+//     ? JSON.parse(localStorage.getItem('cartItems'))
+//     : []
+// );
 
-const addToCart = (id, data, qty) => {
-  const cart = cartItemsVar();
-  const productExist = cart.find((p) => p.id === id);
+// const addToCart = (id, data, qty) => {
+//   const cart = cartItemsVar();
+//   const productExist = cart.find((p) => p.id === id);
 
-  if (productExist) {
-    return cart.map((p) => (p.id === productExist.id ? { id, data, qty } : p));
-  } else {
-    return [...cart, { id, data, qty }];
-  }
-};
-const shippingInfoVar = makeVar(
-  localStorage.getItem('shippingInfo')
-    ? JSON.parse(localStorage.getItem('shippingInfo'))
-    : []
-);
-const paymentInfoVar = makeVar(
-  localStorage.getItem('paymentInfo')
-    ? JSON.parse(localStorage.getItem('paymentInfo'))
-    : []
-);
-const searchVar = makeVar();
+//   if (productExist) {
+//     return cart.map((p) => (p.id === productExist.id ? { id, data, qty } : p));
+//   } else {
+//     return [...cart, { id, data, qty }];
+//   }
+// };
+// const shippingInfoVar = makeVar(
+//   localStorage.getItem('shippingInfo')
+//     ? JSON.parse(localStorage.getItem('shippingInfo'))
+//     : []
+// );
+// const paymentInfoVar = makeVar(
+//   localStorage.getItem('paymentInfo')
+//     ? JSON.parse(localStorage.getItem('paymentInfo'))
+//     : []
+// );
+// const searchVar = makeVar();
 
-const clearLocalStorage = () => {
-  localStorage.removeItem('cartItems');
-  localStorage.removeItem('shippingInfo');
-  localStorage.removeItem('paymentInfo');
-};
+// const clearLocalStorage = () => {
+//   localStorage.removeItem('cartItems');
+//   localStorage.removeItem('shippingInfo');
+//   localStorage.removeItem('paymentInfo');
+// };
 
 export {
   GET_PRODUCTS,
@@ -400,10 +385,10 @@ export {
   CREATE_ORDER,
   CREATE_PRODUCT,
   CREATE_PRODUCT_REVIEW,
-  cartItemsVar,
-  shippingInfoVar,
-  paymentInfoVar,
-  searchVar,
-  addToCart,
-  clearLocalStorage,
+  // cartItemsVar,
+  // shippingInfoVar,
+  // paymentInfoVar,
+  // searchVar,
+  // addToCart,
+  // clearLocalStorage,
 };

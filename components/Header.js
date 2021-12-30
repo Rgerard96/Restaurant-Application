@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
 import { MenuIcon } from '@heroicons/react/outline';
 import SlideOver from './SlideOver';
+import React, { useContext, useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { AuthContext } from '../context/auth';
 
 export default function Header() {
+  const { user, logout } = useContext(AuthContext);
   const [slideOver, setSlideOver] = useState(false);
   const [type, setType] = useState();
-  const [loggedIn, setLoggedIn] = useState(false);
   const slideOverHandler = (e) => {
     setSlideOver(!slideOver);
     setType(e.target.id);
@@ -23,10 +25,18 @@ export default function Header() {
           <h2 className='font-semibold text-blue-500 text-xl'>CultureHypes</h2>
         </div>
         <div className='flex items-center sm:divide-x'>
-          {loggedIn ? (
+          {user ? (
             <div className='hidden sm:block'>
+              <a
+                className='cursor-pointer ml-5 hover:text-blue-600'
+                onClick={() => {
+                  logout();
+                }}
+              >
+                Uitloggen
+              </a>
               <Link href='/mijn-account'>
-                <a className='cursor-pointer mx-5 hover:text-blue-600'>
+                <a className='cursor-pointer mx-5 p-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg'>
                   Mijn Account
                 </a>
               </Link>

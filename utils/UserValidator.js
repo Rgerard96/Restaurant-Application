@@ -1,16 +1,12 @@
 export const UserRegisterValidator = (
-  firstName,
-  lastName,
+  name,
   email,
   password,
   confirmPassword
 ) => {
   const errors = {};
-  if (firstName.trim() === '') {
-    errors.firstName = 'First name must not be empty';
-  }
-  if (lastName.trim() === '') {
-    errors.lastName = 'Last name must not be empty';
+  if (name.trim() === '') {
+    errors.name = 'Name must not be empty';
   }
   if (email.trim() === '') {
     errors.email = 'Email must not be empty';
@@ -56,19 +52,15 @@ export const UserLoginValidator = (email, password) => {
 };
 
 export const UserUpdateValidator = (
-  firstName,
-  lastName,
+  name,
   email,
   oldPassword,
   newPassword,
   confirmNewPassword
 ) => {
   const errors = {};
-  if (firstName.trim() === '') {
-    errors.firstName = 'First name must not be empty';
-  }
-  if (lastName.trim() === '') {
-    errors.lastName = 'Last name must not be empty';
+  if (name.trim() === '') {
+    errors.name = 'First name must not be empty';
   }
   if (email.trim() === '') {
     errors.email = 'Email must not be empty';
@@ -93,13 +85,10 @@ export const UserUpdateValidator = (
     valid: Object.keys(errors).length < 1,
   };
 };
-export const UserProfileUpdateValidator = (firstName, lastName, email) => {
+export const UserProfileUpdateValidator = (name, email) => {
   const errors = {};
-  if (firstName.trim() === '') {
-    errors.firstName = 'First name must not be empty';
-  }
-  if (lastName.trim() === '') {
-    errors.lastName = 'Last name must not be empty';
+  if (name.trim() === '') {
+    errors.name = 'First name must not be empty';
   }
   if (email.trim() === '') {
     errors.email = 'Email must not be empty';

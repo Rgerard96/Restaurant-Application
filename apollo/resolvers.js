@@ -28,8 +28,7 @@ const generateToken = (user) => {
   return jwt.sign(
     {
       id: user._id,
-      firstName: user.firstName,
-      lastName: user.lastName,
+      name: user.name,
       email: user.email,
       isAdmin: user.isAdmin,
     },
@@ -177,8 +176,7 @@ const resolvers = {
       _,
       {
         registerUserInput: {
-          firstName,
-          lastName,
+          name,
           email,
           password,
           confirmPassword,
@@ -187,8 +185,7 @@ const resolvers = {
     ) {
       // TODO Validate user input
       const { errors, valid } = UserRegisterValidator(
-        firstName,
-        lastName,
+        name,
         email,
         password,
         confirmPassword
@@ -211,8 +208,7 @@ const resolvers = {
       password = await bcryptjs.hash(password, 10);
 
       const newUser = new User({
-        firstName,
-        lastName,
+        name,
         email,
         password,
       });
@@ -263,8 +259,7 @@ const resolvers = {
     async updateUser(
       _,
       {
-        firstName,
-        lastName,
+        name,
         email,
         oldPassword,
         newPassword,
@@ -275,8 +270,7 @@ const resolvers = {
       const user = checkAuth(context);
       // TODO Validate user input
       const { errors, valid } = UserUpdateValidator(
-        firstName,
-        lastName,
+        name,
         email,
         oldPassword,
         newPassword,
@@ -301,8 +295,7 @@ const resolvers = {
             errors,
           });
         } else {
-          existingUser.firstName = firstName;
-          existingUser.lastName = lastName;
+          existingUser.name = name;
           existingUser.email = email;
           if (newPassword) {
             newPassword = await bcryptjs.hash(newPassword, 10);
@@ -326,16 +319,11 @@ const resolvers = {
         token,
       };
     },
-    async userProfileUpdate(
-      _,
-      { id, firstName, lastName, email, isAdmin },
-      context
-    ) {
+    async userProfileUpdate(_, { id, name, email, isAdmin }, context) {
       const userAdmin = checkAuth(context);
       // TODO Validate user input
       const { errors, valid } = UserProfileUpdateValidator(
-        firstName,
-        lastName,
+        name,
         email
       );
       if (!valid) {
@@ -353,8 +341,7 @@ const resolvers = {
             errors,
           });
         } else {
-          existingUser.firstName = firstName;
-          existingUser.lastName = lastName;
+          existingUser.name = name;
           existingUser.email = email;
           existingUser.isAdmin = isAdmin;
         }
