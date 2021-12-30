@@ -47,6 +47,7 @@ export default function login() {
     loginUser();
   };
 
+  console.log(errors)
   return (
     <div className='min-h-full flex items-center justify-center py-12 px-5 sm:px-6 lg:px-8'>
       <div className='max-w-md w-full space-y-8'>

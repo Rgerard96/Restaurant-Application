@@ -17,11 +17,11 @@ const typeDefs = gql`
   }
 
   type User {
-    id: ID!
+    id: ID
     name: String
-    email: String!
-    isAdmin: Boolean!
-    token: String!
+    email: String
+    isAdmin: Boolean
+    token: String
   }
 
   type Review {
