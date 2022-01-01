@@ -5,6 +5,7 @@ import { LOGIN_USER } from '../utils/graphql';
 import { AuthContext } from '../context/auth';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Loader from '../components/Loader';
 
 export default function login() {
   const router = useRouter();
@@ -132,7 +133,7 @@ export default function login() {
                 type='submit'
                 className='group relative w-full flex justify-center py-2 px-4 border border-transparent  font-medium rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none mb-3'
               >
-                <div className='loader w-6 h-6 rounded-full animate-spin border-4 border-blue-200 border-t-4'></div>
+                <Loader />
               </button>
             ) : (
               <button
