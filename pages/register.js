@@ -28,7 +28,7 @@ export default function register() {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  const [addUser] = useMutation(REGISTER_USER, {
+  const [addUser, { loading }] = useMutation(REGISTER_USER, {
     update(_, { data: { register: userData } }) {
       context.login(userData);
       router.push('/');
@@ -166,19 +166,28 @@ export default function register() {
           </div>
 
           <div>
-            <button
-              type='submit'
-              className='group relative w-full flex justify-center py-2 px-4 border border-transparent  font-medium rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400'
-              onClick={onSubmit}
-            >
-              <span className='absolute left-0 inset-y-0 flex items-center pl-3'>
-                <LockClosedIcon
-                  className='w-6 text-blue-400 group-hover:text-blue-300'
-                  aria-hidden='true'
-                />
-              </span>
-              Registreren
-            </button>
+            {loading ? (
+              <button
+                type='submit'
+                className='group relative w-full flex justify-center py-2 px-4 border border-transparent  font-medium rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none mb-3'
+              >
+                <div className='loader w-6 h-6 rounded-full animate-spin border-4 border-blue-200 border-t-4'></div>
+              </button>
+            ) : (
+              <button
+                type='submit'
+                className='group relative w-full flex justify-center py-2 px-4 border border-transparent  font-medium rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400'
+                onClick={onSubmit}
+              >
+                <span className='absolute left-0 inset-y-0 flex items-center pl-3'>
+                  <LockClosedIcon
+                    className='w-6 text-blue-400 group-hover:text-blue-300'
+                    aria-hidden='true'
+                  />
+                </span>
+                Registreren
+              </button>
+            )}
           </div>
         </form>
         <div className=' text-center'>

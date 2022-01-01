@@ -26,7 +26,7 @@ export default function login() {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
 
-  const [loginUser] = useMutation(LOGIN_USER, {
+  const [loginUser, { loading }] = useMutation(LOGIN_USER, {
     update(_, { data: { login: userData } }) {
       context.login(userData);
       router.push('/');
@@ -47,7 +47,7 @@ export default function login() {
     loginUser();
   };
 
-  console.log(errors)
+  console.log(errors);
   return (
     <div className='min-h-full flex items-center justify-center py-12 px-5 sm:px-6 lg:px-8'>
       <div className='max-w-md w-full space-y-8'>
@@ -127,19 +127,28 @@ export default function login() {
           </div>
 
           <div>
-            <button
-              type='submit'
-              className='group relative w-full flex justify-center py-2 px-4 border border-transparent  font-medium rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mb-3'
-              onClick={onSubmit}
-            >
-              <span className='absolute left-0 inset-y-0 flex items-center pl-3'>
-                <LockClosedIcon
-                  className='w-6 text-blue-400 group-hover:text-blue-300'
-                  aria-hidden='true'
-                />
-              </span>
-              Inloggen
-            </button>
+            {loading ? (
+              <button
+                type='submit'
+                className='group relative w-full flex justify-center py-2 px-4 border border-transparent  font-medium rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none mb-3'
+              >
+                <div className='loader w-6 h-6 rounded-full animate-spin border-4 border-blue-200 border-t-4'></div>
+              </button>
+            ) : (
+              <button
+                type='submit'
+                className='group relative w-full flex justify-center py-2 px-4 border border-transparent  font-medium rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mb-3'
+                onClick={onSubmit}
+              >
+                <span className='absolute left-0 inset-y-0 flex items-center pl-3'>
+                  <LockClosedIcon
+                    className='w-6 text-blue-400 group-hover:text-blue-300'
+                    aria-hidden='true'
+                  />
+                </span>
+                Inloggen
+              </button>
+            )}
             <div className='text-center'>
               <Link href='/forgot-password'>
                 <a
