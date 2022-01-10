@@ -2,7 +2,6 @@ import { MenuIcon } from '@heroicons/react/outline';
 import SlideOver from './SlideOver';
 import React, { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { AuthContext } from '../context/auth';
 
 export default function Header() {

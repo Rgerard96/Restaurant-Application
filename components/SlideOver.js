@@ -48,7 +48,7 @@ export default function SlideOver({ slideOver, setSlideOver, type }) {
                 type === 'cart' ? 'translate-y-full' : 'translate-x-full'
               }
             >
-              <div className='relative w-screen max-w-md'>
+              <div className='relative w-screen max-w-sm'>
                 <Transition.Child
                   as={Fragment}
                   enter='ease-in-out duration-500'
